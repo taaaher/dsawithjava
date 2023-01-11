@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class SimpleInterest {
     public static void main(String[] args) {
+        simpleInt();
+    }
+    static void simpleInt(){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter Principal : ");

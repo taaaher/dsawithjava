@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class CaseCheck {
     public static void main(String[] args) {
+       checkCase();
+    }
+    static void checkCase(){
         Scanner in = new Scanner(System.in);
         //takes string input and trims it and stores the character at index 0.
         System.out.print("Enter a character : ");

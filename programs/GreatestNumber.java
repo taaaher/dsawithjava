@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class GreatestNumber {
     public static void main(String[] args) {
+
+        greaterNum();
+    }
+    static void greaterNum(){
         Scanner input = new Scanner(System.in);
         System.out.print("Enter two numbers : ");
         int num1 = input.nextInt();
