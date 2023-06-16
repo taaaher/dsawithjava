@@ -2,37 +2,59 @@ package dsaWithJava.functions.Array;
 
 import java.util.Arrays;
 
+//https://leetcode.com/problems/merge-sorted-array/description/
 public class MergeSortedArrays {
     public static void main(String[] args) {
-        int[] arr1 = {1,2,3,0,0,0};
-        int[] arr2 = {2,5,6};
-        int m = 3;
-        int n = 3;
-        merge(arr1,m,arr2,n);
+        int[] arr1 = {0};
+        int[] arr2 = {1};
+        int m = 0;
+        int n = 1;
+//        merge(arr1,m,arr2,n);
+        merge1(arr1,m,arr2,n);
+
+
+    }
+
+     static void merge1(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = m-1;
+        int p2 = n-1;
+        int i = m+n-1;
+         //loop till nums2 doesnt get places in nums1
+         while (p2>=0){
+             //if nums1 has elements and greater than nums2
+            if(p1>=0 && nums1[p1]>nums2[p2]){
+                nums1[i--]=nums1[p1--];
+            }else {
+                nums1[i--]=nums2[p2--];
+            }
+        }
+         System.out.println(Arrays.toString(nums1));
+
 
     }
 
     static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int counter = 0;
-        int i = 0;
+        //Brute force try but fails to pass test cases.
+        int left = 0;
+        int right = nums1.length-1;
         int length = m+n;
-        if (n==0){
+        if (n==0 && m>0){
             System.out.println(Arrays.toString(nums1));
             return;
         }
-            while (i<length){
-                if (nums1[i] == 0){
-                    nums1[i]=nums2[counter];
-                    counter++;
-                } else if (nums1[i]<nums2[counter]) {
-                    i++;
-                }else {
-                    int temp = nums1[i];
-                    nums1[i] = nums2[counter];
-                    nums2[counter] = temp;
+        while (left<n || right>0){
+                if(nums1[right]<nums2[left]){
+                    int temp = nums1[right];
+                    nums1[right] = nums2[left];
+                    nums2[left] = temp;
+                    left++;
+                    right--;
+                    continue;
                 }
-                i++;
+                left++;
+                right--;
             }
+            Arrays.sort(nums1);
 
         System.out.println(Arrays.toString(nums1));
     }
