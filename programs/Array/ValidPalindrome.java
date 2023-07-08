@@ -2,9 +2,46 @@ package dsaWithJava.functions.Array;
 
 public class ValidPalindrome {
     public static void main(String[] args) {
-        String str = "a.@#$%";
-        boolean ans = isPalindrome(str);
+        String str = "Marge, let's \\\"[went].\\\" I await {news} telegram.";
+        boolean ans = isPalindrome2(str);
         System.out.println(ans);
+    }
+
+    static boolean isPalindrome2(String s){
+        //Using ascii values with two pointers
+//        [0-9] -> [48-57]
+//        [A-Z] -> [65-90]
+//        [a-z] -> [97-122]
+
+        int l = 0;
+        int r = s.length()-1;
+        while(l<r){
+            char lIdx = s.charAt(l);
+            char rIdx = s.charAt(r);
+
+            if(!(lIdx>=48 && lIdx<=57 || lIdx>=65 && lIdx<=90 || lIdx>=97 && lIdx<=122)){
+                l++;
+                continue;
+            }
+            if(!(rIdx>=48 && rIdx<=57 || rIdx>=65 && rIdx<=90 || rIdx>=97 && rIdx<=122)){
+                r--;
+                continue;
+            }
+            if(lIdx>=65 && lIdx<=90){
+                //converting uppercase to lowercase
+                lIdx += 32;
+            }
+            if(rIdx>=65 && rIdx<=90){
+                //converting uppercase to lowercase
+                rIdx += 32;
+            }
+            if(lIdx!=rIdx){
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
     }
 
     static boolean isPalindrome(String s) {
