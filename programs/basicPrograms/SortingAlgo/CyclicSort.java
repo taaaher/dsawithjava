@@ -1,4 +1,4 @@
-package SortingAlgo;
+package dsaWithJava.functions.SortingAlgo;
 
 import java.util.ArrayList;
 import java.util.Arrays;

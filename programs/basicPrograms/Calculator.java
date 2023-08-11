@@ -1,4 +1,4 @@
-package dsaWithJava.conditionsAndLoops;
+package dsaWithJava.functions;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package BinarySearch;
+package dsaWithJava.functions.BinarySearch;
 //Rotated Binary Search
 public class rotatedBinarySearch {
     public static void main(String[] args) {

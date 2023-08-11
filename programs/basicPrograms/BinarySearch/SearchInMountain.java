@@ -1,4 +1,4 @@
-package BinarySearch;
+package dsaWithJava.functions.BinarySearch;
 
 public class SearchInMountain {
     public static void main(String[] args) {

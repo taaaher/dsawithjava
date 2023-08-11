@@ -1,4 +1,4 @@
-package BinarySearch;
+package dsaWithJava.functions.BinarySearch;
 //https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
 public class SmallestLetter {
     public static void main(String[] args) {
